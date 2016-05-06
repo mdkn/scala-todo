@@ -1,3 +1,7 @@
-@()
+@(todos: Seq[Todo])
 
 <h1>Todo list</h1>
+
+@for(todo <- todos) {
+    <li>@todo.text</li>
+}

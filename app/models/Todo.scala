@@ -5,6 +5,8 @@ import javax.inject.Inject
 import play.api.db.slick._
 import slick.driver.JdbcProfile
 
+import scala.concurrent.Future
+
 /**
   * Created by madokan on 5/6/16.
   */
@@ -24,5 +26,5 @@ class TodoDao @Inject()(val dbConfigProvider: DatabaseConfigProvider) extends Ha
 
   def store = ???
 
-  def get = ???
+  def get: Future[Seq[Todo]] = db.run(table.result)
 }
