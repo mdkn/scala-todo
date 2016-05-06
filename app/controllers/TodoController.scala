@@ -9,4 +9,6 @@ class TodoController extends Controller {
   def index = Action {
     Ok(views.html.todo())
   }
+
+  def list = ???
 }
