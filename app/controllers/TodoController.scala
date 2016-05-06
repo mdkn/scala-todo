@@ -10,5 +10,7 @@ class TodoController extends Controller {
     Ok(views.html.todo())
   }
 
+  def add = ???
+
   def list = ???
 }
