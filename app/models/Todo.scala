@@ -27,4 +27,6 @@ class TodoDao @Inject()(val dbConfigProvider: DatabaseConfigProvider) extends Ha
   def store(todo: Todo) = db.run(table += todo)
 
   def get: Future[Seq[Todo]] = db.run(table.result)
+
+  def done(id: Long) = db.run(table.filter(_.id === id).map(_.isDone).update(1))
 }

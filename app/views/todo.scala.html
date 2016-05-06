@@ -7,6 +7,21 @@
     <input type="submit" value="Submit">
 </form>
 
+<table>
+    <tr>
+        <td>text</td><td></td>
+    </tr>
 @for(todo <- todos) {
-    <li>@todo.text - @if(todo.isDone == 0) { Undone } else { Done }</li>
+    <tr>
+        <td>
+            @todo.text - @if(todo.isDone == 0) { Undone } else { Done }
+        </td>
+        <td>
+            <form action="/todo/done" method="post">
+                <input type="hidden" name="id" value="@todo.id">
+                <input type="submit" value="Done">
+            </form>
+        </td>
+    </tr>
 }
+</table>
