@@ -2,6 +2,11 @@
 
 <h1>Todo list</h1>
 
+<form action="/todo/add" method="post">
+    <input type="text" name="text">
+    <input type="submit" value="Submit">
+</form>
+
 @for(todo <- todos) {
-    <li>@todo.text</li>
+    <li>@todo.text - @if(todo.isDone == 0) { Undone } else { Done }</li>
 }

@@ -24,7 +24,7 @@ class TodoDao @Inject()(val dbConfigProvider: DatabaseConfigProvider) extends Ha
 
   val table = TableQuery[TodoTable]
 
-  def store = ???
+  def store(todo: Todo) = db.run(table += todo)
 
   def get: Future[Seq[Todo]] = db.run(table.result)
 }
