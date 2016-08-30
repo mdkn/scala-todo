@@ -2,4 +2,4 @@
 
 Sample application by Scala + Play.
 
-test
+test test
